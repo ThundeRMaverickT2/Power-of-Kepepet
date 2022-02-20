@@ -222,7 +222,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 555267050}
-  m_LocalRotation: {x: 0.04992424, y: -0.024899296, z: 0.0012450187, w: 0.9984418}
+  m_LocalRotation: {x: 0.04992424, y: -0.024899293, z: 0.0012450183, w: 0.9984418}
   m_LocalPosition: {x: -11.300006, y: 1.63, z: -7.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -505,7 +505,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.04992424, y: -0.024899296, z: 0.0012450187, w: 0.9984418}
+  m_LocalRotation: {x: 0.04992424, y: -0.024899293, z: 0.0012450183, w: 0.9984418}
   m_LocalPosition: {x: -11.300006, y: 1.63, z: -7.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -951,14 +951,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1866890465, guid: bb8d4abb977cf524e9046fe14c3a4f27, type: 3}
-      propertyPath: _sfxCrash
-      value: 
-      objectReference: {fileID: 8300000, guid: 0c16ea71f9f6f53479e680dcae84f3bc, type: 3}
-    - target: {fileID: 1866890465, guid: bb8d4abb977cf524e9046fe14c3a4f27, type: 3}
-      propertyPath: _sfxFinish
-      value: 
-      objectReference: {fileID: 8300000, guid: 54cc42608251e8e4e8c244c344d787b7, type: 3}
     - target: {fileID: 3731964017300793093, guid: bb8d4abb977cf524e9046fe14c3a4f27, type: 3}
       propertyPath: m_RootOrder
       value: 0
