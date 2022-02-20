@@ -25,6 +25,7 @@ public class Control : MonoBehaviour
     {
         ThrusterActive();
         SecondaryThrustActive();
+        ReloadWhenFall();
     }
 
     void ThrusterActive()
@@ -46,6 +47,14 @@ public class Control : MonoBehaviour
         }
 
 
+    }
+
+    void ReloadWhenFall()
+    {
+        if (shipRb.transform.position.y <= -10)
+        {
+            GetComponent<CollisionController>().ReloadLevel();
+        }
     }
 
     void SecondaryThrustActive()

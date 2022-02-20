@@ -9,7 +9,7 @@ public class CollisionController : MonoBehaviour
     [SerializeField] AudioClip _sfxCrash;
     [SerializeField] const int _timeToWait = 1;
     bool methodOnProgress = false;
-
+    
     AudioSource shipAudio;
 
     private void Start()
@@ -67,7 +67,7 @@ public class CollisionController : MonoBehaviour
         SceneManager.LoadScene(nextActiveScene);
 ;
     }
-    void ReloadLevel()
+    public void ReloadLevel()
     {
         int currentActiveScene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentActiveScene);
