@@ -53,7 +53,7 @@ public class Control : MonoBehaviour
     {
         if (shipRb.transform.position.y <= -10)
         {
-            GetComponent<CollisionController>().ReloadLevel();
+            GetComponent<CollisionController>().OutofLevel();
         }
     }
 

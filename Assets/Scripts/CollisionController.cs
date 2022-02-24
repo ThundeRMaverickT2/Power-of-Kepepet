@@ -72,6 +72,14 @@ public class CollisionController : MonoBehaviour
         int currentActiveScene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentActiveScene);
     }
+
+    public void OutofLevel()
+    {
+        methodOnProgress = true;
+        shipAudio.PlayOneShot(_sfxCrash);
+        this.gameObject.GetComponent<Control>().enabled = false;
+        Invoke("ReloadLevel", _timeToWait);
+    }
 }
    
 
