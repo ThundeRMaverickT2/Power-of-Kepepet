@@ -69,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c58a63ca632a5304f81820648585f2d1, type: 3}
       propertyPath: m_Name
-      value: Player Variant
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c58a63ca632a5304f81820648585f2d1, type: 3}
       propertyPath: m_TagString
@@ -126,7 +126,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c12a05284d687c547aedcf6721fb5f2e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 938a0d6fad3859447b9a8f7b30e2755f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.498
   m_Pitch: 1
@@ -238,7 +238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Thruster: 1000
   _Secondthruster: 100
-  _sfxThrusting: {fileID: 8300000, guid: c12a05284d687c547aedcf6721fb5f2e, type: 3}
+  _sfxThrusting: {fileID: 8300000, guid: 938a0d6fad3859447b9a8f7b30e2755f, type: 3}
 --- !u!114 &1866890465
 MonoBehaviour:
   m_ObjectHideFlags: 0
