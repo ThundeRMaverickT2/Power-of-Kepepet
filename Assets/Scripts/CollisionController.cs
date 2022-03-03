@@ -8,18 +8,44 @@ public class CollisionController : MonoBehaviour
     [SerializeField] AudioClip _sfxFinish;
     [SerializeField] AudioClip _sfxCrash;
     [SerializeField] const int _timeToWait = 1;
-    bool methodOnProgress = false;
+    
+   
+    
+
+    [SerializeField] ParticleSystem _winParticle;
+    [SerializeField] ParticleSystem _loseParticle;
     
     AudioSource shipAudio;
+
+    bool methodOnProgress = false;
+    bool collisionDisabled = false;
 
     private void Start()
     {
         shipAudio = GetComponent<AudioSource>();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            Debug.Log("LoadedNextLevel");
+            LoadNextLevel();
+        }
+        else if (Input.GetKeyDown(KeyCode.F2))
+        {
+            Debug.Log("CollisionHasBeenDisabled");
+            collisionDisabled = !collisionDisabled;
+        }
+        else if (Input.GetKeyDown(KeyCode.F5))
+        {
+            Debug.Log("ReloadLevel!");
+            ReloadLevel();
+        }
+    }
     void OnCollisionEnter(Collision other)
     {
-        if (methodOnProgress)
+        if (methodOnProgress || collisionDisabled)
         {
             return;
         }
@@ -45,6 +71,7 @@ public class CollisionController : MonoBehaviour
     {
         methodOnProgress = true;
         shipAudio.PlayOneShot(_sfxCrash);
+        _loseParticle.Play(_loseParticle);
         this.gameObject.GetComponent<Control>().enabled = false;
         Invoke("ReloadLevel", _timeToWait);
     }
@@ -53,10 +80,16 @@ public class CollisionController : MonoBehaviour
     {
         methodOnProgress = true;
         shipAudio.PlayOneShot(_sfxFinish);
+        _winParticle.Play(_winParticle);
         this.gameObject.GetComponent<Control>().enabled = false;
         Invoke("LoadNextLevel", _timeToWait);
     }
     void LoadNextLevel()
+    {
+        GetLoadScene();
+    }
+
+    private static void GetLoadScene()
     {
         int currentActiveScene = SceneManager.GetActiveScene().buildIndex;
         int nextActiveScene = currentActiveScene + 1;
@@ -65,8 +98,8 @@ public class CollisionController : MonoBehaviour
             nextActiveScene = 0;
         }
         SceneManager.LoadScene(nextActiveScene);
-;
     }
+
     public void ReloadLevel()
     {
         int currentActiveScene = SceneManager.GetActiveScene().buildIndex;

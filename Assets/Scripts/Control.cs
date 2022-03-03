@@ -8,6 +8,10 @@ public class Control : MonoBehaviour
     [SerializeField] float _Secondthruster = 500f;
     [SerializeField] AudioClip _sfxThrusting;
 
+
+    [SerializeField] ParticleSystem _ThrusterFX;
+
+
     Rigidbody shipRb;
     AudioSource shipAudio;
     
@@ -30,23 +34,26 @@ public class Control : MonoBehaviour
 
     void ThrusterActive()
     {
-        
+        Thrusting();
+    }
+
+    private void Thrusting()
+    {
         if (Input.GetKey(KeyCode.Space))
         {
-          
+
             shipRb.AddRelativeForce(Vector3.up * _Thruster * Time.deltaTime);
             if (!shipAudio.isPlaying)
             {
-                shipAudio.Play();
+                shipAudio.PlayOneShot(_sfxThrusting);
             }
-           
+            _ThrusterFX.Play();
         }
         else
         {
             shipAudio.Stop();
+            _ThrusterFX.Stop();
         }
-
-
     }
 
     void ReloadWhenFall()
@@ -59,9 +66,16 @@ public class Control : MonoBehaviour
 
     void SecondaryThrustActive()
     {
+        Rotate();
+    }
+
+    private void Rotate()
+    {
         if (Input.GetKey(KeyCode.A))
         {
             ActivateSecondaryThrust(_Secondthruster);
+
+
         }
         else if (Input.GetKey(KeyCode.D))
         {
