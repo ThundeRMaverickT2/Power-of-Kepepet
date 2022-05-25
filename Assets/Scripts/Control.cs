@@ -48,6 +48,7 @@ public class Control : MonoBehaviour
                 shipAudio.PlayOneShot(_sfxThrusting);
             }
             _ThrusterFX.Play();
+            
         }
         else
         {
